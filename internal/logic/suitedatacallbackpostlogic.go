@@ -1,0 +1,40 @@
+package logic
+
+import (
+	"context"
+	"errors"
+	"github.com/go-laoji/wxbizmsgcrypt"
+
+	"suite-zero-svr/internal/svc"
+	"suite-zero-svr/internal/types"
+
+	"github.com/tal-tech/go-zero/core/logx"
+)
+
+type SuiteDataCallbackPostLogic struct {
+	logx.Logger
+	ctx    context.Context
+	svcCtx *svc.ServiceContext
+}
+
+func NewSuiteDataCallbackPostLogic(ctx context.Context, svcCtx *svc.ServiceContext) SuiteDataCallbackPostLogic {
+	return SuiteDataCallbackPostLogic{
+		Logger: logx.WithContext(ctx),
+		ctx:    ctx,
+		svcCtx: svcCtx,
+	}
+}
+
+func (l *SuiteDataCallbackPostLogic) SuiteDataCallbackPost(req types.MsgRequest, body []byte) (*types.MsgResponse, error) {
+	// TODO: 注意post请求接收数据时配置为suiteid
+	wxbiz := wxbizmsgcrypt.NewWXBizMsgCrypt(l.svcCtx.Config.SuiteToken,
+		l.svcCtx.Config.SuiteEncodingAesKey,
+		l.svcCtx.Config.SuiteId,
+		wxbizmsgcrypt.XmlType)
+	echoStr, cryptErr := wxbiz.DecryptMsg(req.MsgSignature, req.TimeStamp, req.Nonce, body)
+	if cryptErr != nil {
+		return &types.MsgResponse{}, errors.New(cryptErr.ErrMsg)
+	}
+	l.Info(string(echoStr))
+	return &types.MsgResponse{ErrCode: 0, ErrMsg: "ok", Data: []byte("success")}, nil
+}

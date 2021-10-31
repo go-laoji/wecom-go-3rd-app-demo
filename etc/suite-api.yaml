@@ -1,0 +1,8 @@
+Name: suite-api
+Host: 0.0.0.0
+Port: 8888
+CorpId:
+SuiteId:
+SuiteToken:
+SuiteEncodingAesKey:
+SuiteSecret:
