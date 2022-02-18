@@ -1,6 +1,6 @@
-# suite-zero-svr
+# wecom-go-3rd-app-demo
 
-使用 [go-zero](https://github.com/zeromicro/go-zero) 框架编写的企业微信第三方应用接收消息回调API
+使用 [go-zero](https://github.com/zeromicro/go-zero) 框架编写的企业微信第三方应用接收消息回调API,只做参数的解析验证不涉及逻辑处理
 
 后台使用时数据回调URL填写：
 

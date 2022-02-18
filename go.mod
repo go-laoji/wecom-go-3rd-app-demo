@@ -1,4 +1,4 @@
-module suite-zero-svr
+module wecom-go-3rd-app-demo
 
 go 1.17
 
