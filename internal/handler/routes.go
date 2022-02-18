@@ -4,7 +4,7 @@ package handler
 import (
 	"net/http"
 
-	"suite-zero-svr/internal/svc"
+	"wecom-go-3rd-app-demo/internal/svc"
 
 	"github.com/tal-tech/go-zero/rest"
 )

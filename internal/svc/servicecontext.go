@@ -1,7 +1,7 @@
 package svc
 
 import (
-	"suite-zero-svr/internal/config"
+	"wecom-go-3rd-app-demo/internal/config"
 )
 
 type ServiceContext struct {

@@ -5,9 +5,9 @@ import (
 	"net/http"
 
 	"github.com/tal-tech/go-zero/rest/httpx"
-	"suite-zero-svr/internal/logic"
-	"suite-zero-svr/internal/svc"
-	"suite-zero-svr/internal/types"
+	"wecom-go-3rd-app-demo/internal/logic"
+	"wecom-go-3rd-app-demo/internal/svc"
+	"wecom-go-3rd-app-demo/internal/types"
 )
 
 func suiteDataCallbackPostHandler(ctx *svc.ServiceContext) http.HandlerFunc {
@@ -23,7 +23,7 @@ func suiteDataCallbackPostHandler(ctx *svc.ServiceContext) http.HandlerFunc {
 		if err != nil {
 			httpx.Error(w, err)
 		}
-		resp, err := l.SuiteDataCallbackPost(req,body)
+		resp, err := l.SuiteDataCallbackPost(req, body)
 		if err != nil {
 			httpx.Error(w, err)
 		} else {

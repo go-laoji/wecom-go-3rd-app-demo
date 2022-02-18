@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"github.com/go-laoji/wxbizmsgcrypt"
 
-	"suite-zero-svr/internal/svc"
-	"suite-zero-svr/internal/types"
+	"wecom-go-3rd-app-demo/internal/svc"
+	"wecom-go-3rd-app-demo/internal/types"
 
 	"github.com/tal-tech/go-zero/core/logx"
 )

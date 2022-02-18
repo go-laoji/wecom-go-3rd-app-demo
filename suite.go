@@ -4,9 +4,9 @@ import (
 	"flag"
 	"fmt"
 
-	"suite-zero-svr/internal/config"
-	"suite-zero-svr/internal/handler"
-	"suite-zero-svr/internal/svc"
+	"wecom-go-3rd-app-demo/internal/config"
+	"wecom-go-3rd-app-demo/internal/handler"
+	"wecom-go-3rd-app-demo/internal/svc"
 
 	"github.com/tal-tech/go-zero/core/conf"
 	"github.com/tal-tech/go-zero/rest"
